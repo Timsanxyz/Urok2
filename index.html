@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2 урок. Домашнеей задание</title>
+</head>
+<body>
+<script>
+
+    function getRandomNumber(maxNumber) {
+        return Math.ceil(Math.random() * maxNumber) * (Math.round(Math.random()) ? 1 : -1)
+    }
+
+    //3. Разность, произведение, сумма.
+    let a = getRandomNumber(100);
+    console.log("a = " + a);
+    let b = getRandomNumber(100);
+    console.log("b = " + b);
+
+    //Если оба числа положительные
+    if (a >= 0 && b >= 0) {
+        console.log("a - b = " + (a - b));
+        console.log("b - a = " + (b - a));
+    }
+
+    //Если оба числа отрицательные
+    if (a <= -1 && b <= -1) {
+        console.log("a * b = " + (a * b));
+    }
+
+    //Если оба числа разных знаков
+    if ((a >= 0 && b <= -1) || (a <= -1 && b >= 0)) {
+        console.log("a + b = " + (a + b));
+    }
+
+    //Присвоить значение от 0 до 15
+    a = getRandomNumber(15);
+    console.log("Рандомное число от 0 до 15: " + a);
+
+
+    //4. Четыре арифметические функции
+
+    function getSum(a, b) {
+        return a + b;
+    }
+
+    function getDifference(a, b) {
+        return a - b;
+    }
+
+    function getMultiplication(a, b){
+        return a * b;
+    }
+
+    function getDivision(a, b){
+        return a / b;
+    }
+
+    a = getRandomNumber(10);
+    b = getRandomNumber(10);
+
+    console.log(getSum(a,b));
+    console.log(getDifference(a,b));
+    console.log(getMultiplication(a,b));
+    console.log(getDivision(a,b));
+
+
+
+    //5. Функция с тремя параметрами
+    function doSomeMath(num1, num2, operation){
+        switch (operation){
+            case "-":
+                console.log("Результаты операции " + operation + ": " + (getDifference(num1,num2)));
+                break;
+            case "+":
+                console.log("Результаты операции " + operation + ": " + (getSum(num1,num2)));
+                break;
+            case "*":
+                console.log("Результаты операции " + operation + ": " + (getMultiplication(num1,num2)));
+                break;
+            case "/":
+                console.log("Результаты операции " + operation + ": " + (getDivision(num1,num2)));
+                break;
+        }
+    }
+
+    a = +prompt("Введите 1 число");
+    b = +prompt("Введите 2 число");
+    let op = prompt("Введите оператор");
+
+    doSomeMath(a,b,op);
+
+
+</script>
+</body>
+</html>
